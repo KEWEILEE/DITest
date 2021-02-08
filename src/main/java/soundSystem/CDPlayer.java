@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 public class CDPlayer implements MediaPlayer {
     private CompactDisc cd;
 
-    @Autowired
-    public CDPlayer(CompactDisc input) {
-        this.cd = input;
-    }
+//    @Autowired
+//    public CDPlayer(CompactDisc input) {
+//        this.cd = input;
+//    }
 
     public void play() {
         cd.play();
@@ -20,6 +20,7 @@ public class CDPlayer implements MediaPlayer {
         return cd;
     }
 
+    @Autowired
     public void setCd(CompactDisc cd) {
         this.cd = cd;
     }

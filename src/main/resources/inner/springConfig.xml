@@ -3,6 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="compactDisc" class="soundSystem.SgtPeppers"/>
+    <bean id="compactDisc" class="soundSystem.BlankDisc">
+        <constructor-arg value="Sgt. Pepper's"/>
+        <constructor-arg value="The Beatles"/>
+        <constructor-arg>
+            <list>
+                <value>Sgt. Pepper</value>
+                <value>with a little help</value>
+            </list>
+        </constructor-arg>
+    </bean>
     <bean id="cdPlayer" class="soundSystem.CDPlayer" c:input-ref="compactDisc"/>
 </beans>

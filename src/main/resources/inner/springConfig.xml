@@ -2,18 +2,21 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
        xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="compactDisc" class="soundSystem.BlankDisc">
-        <constructor-arg value="Sgt. Pepper's"/>
-        <constructor-arg value="The Beatles"/>
-        <constructor-arg>
-            <list>
-                <value>Sgt. Pepper</value>
-                <value>with a little help</value>
-            </list>
-        </constructor-arg>
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd">
+    <bean id="compactDisc" class="soundSystem.BlankDisc" p:tracks-ref="trackList">
+        <property name="title" value="Sgt. Pepper's"/>
+        <property name="artist" value="The Beatles"/>
     </bean>
+
+    <util:list id="trackList">
+        <value>Sgt. Pepper</value>
+        <value>with a little help</value>
+    </util:list>
 
     <bean id="cdPlayer" class="soundSystem.CDPlayer" p:cd-ref="compactDisc"/>
 </beans>

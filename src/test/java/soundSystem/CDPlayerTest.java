@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(classes = CDPlayerConfig.class)
+//@ContextConfiguration(classes = SoundSystemConfig.class)
 @ContextConfiguration(locations = {"classpath:inner/springConfig.xml"})
 public class CDPlayerTest {
 

@@ -8,6 +8,13 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/util
                            http://www.springframework.org/schema/util/spring-util.xsd">
-    <bean class="soundSystem.CDConfig"/>
-    <bean id="cdPlayer" class="soundSystem.CDPlayer" p:cd-ref="compactDisc"/>
+    <bean id="compactDisc" class="soundSystem.BlankDisc" p:tracks-ref="trackList">
+        <property name="title" value="Sgt. Pepper's"/>
+        <property name="artist" value="The Beatles"/>
+    </bean>
+
+    <util:list id="trackList">
+        <value>Sgt. Pepper</value>
+        <value>with a little help</value>
+    </util:list>
 </beans>
